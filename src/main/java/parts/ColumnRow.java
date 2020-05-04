@@ -6,12 +6,8 @@ import java.util.List;
 
 public class ColumnRow {
     private List<Column> columns;
-    private int xCenter;
-    private int yCenter;
 
-    public ColumnRow(int xCenter, int yCenter) {
-        this.xCenter = xCenter;
-        this.yCenter = yCenter;
+    public ColumnRow() {
         columns = new ArrayList<Column>();
     }
 
@@ -19,11 +15,11 @@ public class ColumnRow {
         columns.add(column);
     }
 
-    public void paint(Graphics graphics) {
-        int xTemp = 0;
+    public void paint(Graphics graphics, int xCenter, int yCenter) {
+        int xShift = 0;
         for (Column column: columns) {
-            xTemp += Column.WIDTH;
-            column.paint(graphics, xCenter + xTemp, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
+            column.paint(graphics, xCenter + xShift, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
+            xShift += Column.WIDTH + 10;
         }
     }
 }
