@@ -1,5 +1,6 @@
 package parts;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +19,11 @@ public class ColumnRow {
         columns.add(column);
     }
 
-    public void paint() {
+    public void paint(Graphics graphics) {
         int xTemp = 0;
         for (Column column: columns) {
             xTemp += Column.WIDTH;
-            column.paint(xCenter + xTemp, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
+            column.paint(graphics, xCenter + xTemp, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
         }
     }
 }

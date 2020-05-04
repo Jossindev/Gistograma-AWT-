@@ -6,19 +6,17 @@ public class Column {
     public static final int PARALLELOGRAM_SHIFT = Toolkit.getDefaultToolkit().getScreenSize().height / 50;
     public static final int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 30;
     public static final int HEIGHT_UNIT = Toolkit.getDefaultToolkit().getScreenSize().height / 170;
-    private Graphics2D graphics;
     private int percents;
     private Color brightColor;
     private Color darkColor;
 
-    public Column(Graphics graphics, int percents, Color color) {
-        this.graphics = (Graphics2D) graphics;
+    public Column(int percents, Color color) {
         this.percents = percents;
         this.brightColor = color.brighter();
         this.darkColor = color.darker();
     }
 
-    public void paint(int x, int y) {
+    public void paint(Graphics graphics, int x, int y) {
         //draw front side of column
         graphics.setColor(brightColor);
         graphics.fillRect(x, y, WIDTH, HEIGHT_UNIT * percents);
