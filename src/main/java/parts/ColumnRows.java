@@ -23,12 +23,16 @@ public class ColumnRows {
         rows.add(columnRow);
     }
 
+    public int getNumberOfRows() {
+        return rows.size();
+    }
+
     public void paint(Graphics graphics) {
         int yShift = 0;
         int xShift = 0;
         for (ColumnRow row: rows) {
-            yShift += Column.PARALLELOGRAM_SHIFT;
             row.paint(graphics, xCenter - xShift, yCenter + yShift);
+            yShift += Column.PARALLELOGRAM_SHIFT;
             xShift += Column.PARALLELOGRAM_SHIFT;
         }
     }

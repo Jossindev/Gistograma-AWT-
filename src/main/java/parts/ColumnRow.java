@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ColumnRow {
+    public static final int COLUMN_GAP = 10;
     private List<Column> columns;
 
     public ColumnRow() {
@@ -19,7 +20,7 @@ public class ColumnRow {
         int xShift = 0;
         for (Column column: columns) {
             column.paint(graphics, xCenter + xShift, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
-            xShift += Column.WIDTH + 10;
+            xShift += Column.WIDTH + COLUMN_GAP;
         }
     }
 }
