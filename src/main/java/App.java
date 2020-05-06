@@ -12,3 +12,6 @@ class App extends Frame {
     void start() {
     }
 }
+//TODO: solve 100% problem
+//TODO: add interface Paintable
+//TODO: refactor method paint() in Column class
