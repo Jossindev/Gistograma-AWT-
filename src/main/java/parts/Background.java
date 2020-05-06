@@ -17,6 +17,7 @@ public class Background implements Paintable{
     public void paint(Graphics graphics, int x, int y) {
         Polygon side;
 
+        //draw left side of background
         graphics.setColor(COLOR.darker());
         side = new Polygon();
         side.addPoint(x, y);
@@ -25,6 +26,7 @@ public class Background implements Paintable{
         side.addPoint(x - Column.PARALLELOGRAM_SHIFT * numberOfRows - LEDGE, y + Column.PARALLELOGRAM_SHIFT * numberOfRows + LEDGE);
         graphics.fillPolygon(side);
 
+        //draw bottom side of background
         graphics.setColor(COLOR);
         side = new Polygon();
         side.addPoint(x, y + height);
@@ -33,6 +35,7 @@ public class Background implements Paintable{
         side.addPoint(x - Column.PARALLELOGRAM_SHIFT * numberOfRows - LEDGE, y + height + Column.PARALLELOGRAM_SHIFT * numberOfRows + LEDGE);
         graphics.fillPolygon(side);
 
+        //draw back side of background
         graphics.setColor(COLOR.brighter());
         graphics.fillRect(x, y, Column.WIDTH * 7 + ColumnRow.COLUMN_GAP * 6 + LEDGE, height);
     }

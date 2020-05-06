@@ -17,13 +17,15 @@ public class Column implements Paintable {
     }
 
     public void paint(Graphics graphics, int x, int y) {
+        Polygon parallelogram;
+
         //draw front side of column
         graphics.setColor(brightColor);
         graphics.fillRect(x, y, WIDTH, HEIGHT_UNIT * percents);
 
         //draw top side of column
         graphics.setColor(darkColor);
-        Polygon parallelogram = new Polygon();
+        parallelogram = new Polygon();
         parallelogram.addPoint(x, y);
         parallelogram.addPoint(x + WIDTH, y);
         parallelogram.addPoint(x + WIDTH + PARALLELOGRAM_SHIFT, y - PARALLELOGRAM_SHIFT);
