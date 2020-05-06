@@ -2,17 +2,19 @@ package parts;
 
 import java.awt.*;
 
-public class Background {
+public class Background implements Paintable{
     private static final int LEDGE = 50;
     private static final Color COLOR = Color.GRAY;
     private int height;
+    private int numberOfRows;
 
 
-    public Background(int height) {
+    public Background(int height, int numberOfRows) {
         this.height = height;
+        this.numberOfRows = numberOfRows;
     }
 
-    public void paint(Graphics graphics, int x, int y, int numberOfRows) {
+    public void paint(Graphics graphics, int x, int y) {
         Polygon side;
 
         graphics.setColor(COLOR.darker());

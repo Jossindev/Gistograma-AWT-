@@ -4,14 +4,10 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColumnRows {
+public class ColumnRows implements Paintable {
     private List<ColumnRow> rows;
-    private int xCenter;
-    private int yCenter;
 
-    public ColumnRows(int xCenter, int yCenter) {
-        this.xCenter = xCenter;
-        this.yCenter = yCenter;
+    public ColumnRows() {
         rows = new ArrayList<ColumnRow>();
     }
 
@@ -27,11 +23,11 @@ public class ColumnRows {
         return rows.size();
     }
 
-    public void paint(Graphics graphics) {
+    public void paint(Graphics graphics, int x, int y) {
         int yShift = 0;
         int xShift = 0;
         for (ColumnRow row: rows) {
-            row.paint(graphics, xCenter - xShift, yCenter + yShift);
+            row.paint(graphics, x - xShift, y + yShift);
             yShift += Column.PARALLELOGRAM_SHIFT;
             xShift += Column.PARALLELOGRAM_SHIFT;
         }

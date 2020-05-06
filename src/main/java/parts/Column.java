@@ -2,7 +2,7 @@ package parts;
 
 import java.awt.*;
 
-public class Column {
+public class Column implements Paintable {
     public static final int PARALLELOGRAM_SHIFT = Toolkit.getDefaultToolkit().getScreenSize().height / 50;
     public static final int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width / 30;
     public static final int HEIGHT_UNIT = Toolkit.getDefaultToolkit().getScreenSize().height / 170;

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ColumnRow {
+public class ColumnRow implements Paintable {
     public static final int COLUMN_GAP = 10;
     private List<Column> columns;
 
@@ -16,10 +16,10 @@ public class ColumnRow {
         columns.add(column);
     }
 
-    public void paint(Graphics graphics, int xCenter, int yCenter) {
+    public void paint(Graphics graphics, int x, int y) {
         int xShift = 0;
         for (Column column: columns) {
-            column.paint(graphics, xCenter + xShift, yCenter - column.getHeight() + 100 * Column.HEIGHT_UNIT);
+            column.paint(graphics, x + xShift, y - column.getHeight() + 100 * Column.HEIGHT_UNIT);
             xShift += Column.WIDTH + COLUMN_GAP;
         }
     }
