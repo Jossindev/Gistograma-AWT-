@@ -1,9 +1,6 @@
 package parts;
 
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Polygon;
+import java.awt.*;
 import java.util.List;
 
 public class Background implements Paintable{

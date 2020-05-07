@@ -1,8 +1,6 @@
 package screens;
 
 import adapters.DialogWindowAdapter;
-import adapters.SubmitButtonAL;
-import app.App;
 import parts.ColumnRows;
 
 import javax.swing.*;
@@ -54,7 +52,7 @@ public class ValueSetter extends Frame {
             add(panel);
         }
         Button submit = new Button("submit");
-        submit.addActionListener(new SubmitButtonAL(this));
+        submit.addActionListener(actionEvent -> {submit(); setVisible(false);});
         add(submit);
 
         setVisible(true);
@@ -62,10 +60,10 @@ public class ValueSetter extends Frame {
 
     public void submit() {
         int maxValue = 0;
-        List<Integer[]> values = new ArrayList<Integer[]>();
+        List<Integer[]> values = new ArrayList<>();
         label: {
             for (TextField[] textFields : valueFields) {
-                List<Integer> localValues = new ArrayList<Integer>(7);
+                List<Integer> localValues = new ArrayList<>(7);
                 for (TextField textField : textFields) {
                     try {
                         if ("".equals(textField.getText())) {

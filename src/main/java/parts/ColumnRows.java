@@ -25,10 +25,6 @@ public class ColumnRows implements Paintable {
         return rows;
     }
 
-    public int getNumberOfRows() {
-        return rows.size();
-    }
-
     int getMaxValue() {
         return maxValue;
     }

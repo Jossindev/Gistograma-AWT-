@@ -1,10 +1,9 @@
-package app;
+package screens;
 
-import adapters.AppWindowAdapter;
+import adapters.ExitWindowAdapter;
 import parts.Background;
 import parts.Column;
 import parts.ColumnRows;
-import screens.ValueSetter;
 
 import java.awt.*;
 
@@ -15,13 +14,13 @@ public class App extends Frame {
 
     public App() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setTitle("Kursach");
-        this.setSize(screenSize);
-        this.setVisible(true);
+        setTitle("Kursach app");
+        setSize(screenSize);
+        setVisible(true);
         xStart = screenSize.width/ 3;
         yStart = screenSize.height / 5;
 
-        addWindowListener(new AppWindowAdapter());
+        addWindowListener(new ExitWindowAdapter());
 
         new ValueSetter(this);
 

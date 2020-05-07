@@ -1,7 +1,7 @@
-import app.App;
+import screens.Menu;
 
 class Main {
     public static void main(String[] args) {
-        new App();
+        new Menu();
     }
 }
