@@ -7,8 +7,10 @@ import java.util.List;
 public class ColumnRow implements Paintable {
     public static final int COLUMN_GAP = 10;
     private List<Column> columns;
+    private String name;
 
-    public ColumnRow() {
+    public ColumnRow(String name) {
+        this.name = name;
         columns = new ArrayList<Column>();
     }
 
@@ -19,8 +21,14 @@ public class ColumnRow implements Paintable {
     public void paint(Graphics graphics, int x, int y) {
         int xShift = 0;
         for (Column column: columns) {
-            column.paint(graphics, x + xShift, y - column.getHeight() + 100 * Column.HEIGHT_UNIT);
+            int localX = x + xShift;
+            int localY = y - column.getHeight() + 100 * Column.HEIGHT_UNIT;
+            column.paint(graphics, localX, localY);
             xShift += Column.WIDTH + COLUMN_GAP;
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

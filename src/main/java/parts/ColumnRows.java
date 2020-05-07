@@ -6,21 +6,31 @@ import java.util.List;
 
 public class ColumnRows implements Paintable {
     private List<ColumnRow> rows;
+    private int maxValue;
 
-    public ColumnRows() {
+    public ColumnRows(int maxValue) {
         rows = new ArrayList<ColumnRow>();
+        this.maxValue = maxValue;
     }
 
-    public void addColumns(Color color, int[] percents) {
-        ColumnRow columnRow = new ColumnRow();
+    public void addColumns(Color color, int[] percents, String name) {
+        ColumnRow columnRow = new ColumnRow(name);
         for (int percent: percents) {
             columnRow.addColumn(new Column(percent, color));
         }
         rows.add(columnRow);
     }
 
+    public List<ColumnRow> getRows() {
+        return rows;
+    }
+
     public int getNumberOfRows() {
         return rows.size();
+    }
+
+    int getMaxValue() {
+        return maxValue;
     }
 
     public void paint(Graphics graphics, int x, int y) {

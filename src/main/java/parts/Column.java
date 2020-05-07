@@ -21,7 +21,7 @@ public class Column implements Paintable {
 
         //draw front side of column
         graphics.setColor(brightColor);
-        graphics.fillRect(x, y, WIDTH, HEIGHT_UNIT * percents);
+        graphics.fillRect(x, y, WIDTH, percents * HEIGHT_UNIT);
 
         //draw top side of column
         graphics.setColor(darkColor);
