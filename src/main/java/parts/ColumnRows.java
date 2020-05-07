@@ -13,10 +13,10 @@ public class ColumnRows implements Paintable {
         this.maxValue = maxValue;
     }
 
-    public void addColumns(Color color, int[] percents, String name) {
+    public void addColumns(Color color, Integer[] percents, String name) {
         ColumnRow columnRow = new ColumnRow(name);
         for (int percent: percents) {
-            columnRow.addColumn(new Column(percent, color));
+            columnRow.addColumn(new Column(percent * 100 / maxValue, color));
         }
         rows.add(columnRow);
     }

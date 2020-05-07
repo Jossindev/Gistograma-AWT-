@@ -82,8 +82,8 @@ public class Background implements Paintable{
         int yShift = 100 * Column.HEIGHT_UNIT / divisions;
 
         for (int i = 10; i >= 1; i--) {
-            int stringShift = graphics.getFontMetrics().stringWidth(String.valueOf(maxValue * 0.1 * i));
-            int x = xStart - Column.PARALLELOGRAM_SHIFT * (columnRows.getRows().size() + 1) - stringShift;
+            int stringShift = graphics.getFontMetrics().stringWidth(String.valueOf((int)(maxValue * 0.1 * i)));
+            int x = xStart - Column.PARALLELOGRAM_SHIFT * (columnRows.getRows().size() + 1) - stringShift*2;
             int y = yStart + Column.PARALLELOGRAM_SHIFT * (columnRows.getRows().size() + 3) + yShift * (divisions - i);
             graphics.drawString(String.valueOf((int)(maxValue * 0.1 * i)), x, y);
         }
