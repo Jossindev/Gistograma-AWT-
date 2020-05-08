@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ValueSetter extends Frame {
+    private static final float D = 0.6f;
     private App app;
     private List<Color> colors;
     private TextField[] nameFields;
@@ -69,7 +70,7 @@ public class ValueSetter extends Frame {
                         if ("".equals(textField.getText())) {
                             break label;
                         }
-                        int value = Integer.parseInt(textField.getText());
+                        int value = (int) (Integer.parseInt(textField.getText()) * D);
                         if (maxValue < value) {
                             maxValue = value;
                         }
