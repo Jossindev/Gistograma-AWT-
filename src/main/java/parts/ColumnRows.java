@@ -9,7 +9,7 @@ public class ColumnRows implements Paintable {
     private int maxValue;
 
     public ColumnRows(int maxValue) {
-        rows = new ArrayList<ColumnRow>();
+        rows = new ArrayList<>();
         this.maxValue = maxValue;
     }
 

@@ -19,7 +19,7 @@ public class ValueSetter extends Frame {
         this.app = app;
         setSize(600, 600);
         setResizable(false);
-        colors = new ArrayList<Color>();
+        colors = new ArrayList<>();
         colors.add(Color.BLUE);
         colors.add(Color.ORANGE);
         colors.add(Color.RED);
