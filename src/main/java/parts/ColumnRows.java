@@ -2,6 +2,7 @@ package parts;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ColumnRows implements Paintable {
@@ -25,7 +26,7 @@ public class ColumnRows implements Paintable {
         return rows;
     }
 
-    int getMaxValue() {
+    public int getMaxValue() {
         return maxValue;
     }
 
@@ -37,5 +38,18 @@ public class ColumnRows implements Paintable {
             yShift += Column.PARALLELOGRAM_SHIFT;
             xShift += Column.PARALLELOGRAM_SHIFT;
         }
+    }
+
+    public int getOverlapValue(int mouseX, int mouseY) {
+        List<ColumnRow> temp = new ArrayList<>(rows);
+        Collections.reverse(temp);
+        for(ColumnRow row: temp) {
+            for (Column column: row.getColumns()) {
+                if(column.contains(mouseX, mouseY)) {
+                    return column.getValue();
+                }
+            }
+        }
+        return -1;
     }
 }

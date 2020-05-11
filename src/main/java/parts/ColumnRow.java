@@ -31,4 +31,8 @@ public class ColumnRow implements Paintable {
     public String getName() {
         return name;
     }
+
+    public List<Column> getColumns() {
+        return columns;
+    }
 }

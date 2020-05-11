@@ -3,31 +3,26 @@ package adapters;
 import screens.App;
 import screens.Menu;
 
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class StartKeyAdapter implements KeyListener {
+public class StartKeyAdapter extends KeyAdapter {
     private Menu menu;
+    boolean existsAppInstance;
 
     public StartKeyAdapter(Menu menu) {
         this.menu = menu;
-    }
-
-    @Override
-    public void keyTyped(KeyEvent keyEvent) {
-
+        existsAppInstance = false;
     }
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (KeyEvent.VK_F == keyEvent.getKeyCode()) {
             menu.setVisible(false);
-            new App();
+            if (!existsAppInstance) {
+                new App();
+                existsAppInstance = true;
+            }
         }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent keyEvent) {
-
     }
 }

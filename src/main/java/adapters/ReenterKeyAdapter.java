@@ -2,10 +2,10 @@ package adapters;
 
 import screens.App;
 
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class ReenterKeyAdapter implements KeyListener {
+public class ReenterKeyAdapter extends KeyAdapter {
     private App app;
 
     public ReenterKeyAdapter(App app) {
@@ -13,19 +13,9 @@ public class ReenterKeyAdapter implements KeyListener {
     }
 
     @Override
-    public void keyTyped(KeyEvent keyEvent) {
-
-    }
-
-    @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (KeyEvent.VK_R == keyEvent.getKeyCode()) {
             app.reenterValues();
 ;        }
-    }
-
-    @Override
-    public void keyReleased(KeyEvent keyEvent) {
-
     }
 }
